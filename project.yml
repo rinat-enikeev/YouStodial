@@ -1,0 +1,51 @@
+APP_NAME: &APP_NAME YouStodial
+DEVELOPMENT_TEAM: &DEVELOPMENT_TEAM 5V5EUT3ZXJ
+BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX com.programyzer
+
+settings:
+  base:
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: "0.1"
+    DEVELOPMENT_TEAM: *DEVELOPMENT_TEAM
+
+packages:
+  swift-composable-architecture: 
+    url: https://github.com/pointfreeco/swift-composable-architecture
+    from: 1.15.0
+  stellarsdk:
+    url: https://github.com/Soneso/stellar-ios-mac-sdk
+    from: 2.6.6
+
+name: *APP_NAME
+
+options:
+  bundleIdPrefix: *BUNDLE_ID_PREFIX
+  developmentLanguage: en
+  deploymentTarget:
+    iOS: 17.0
+
+targets:
+  *APP_NAME:
+    type: application
+    platform: iOS
+    sources:
+      - path: iOS
+      - path: Shared
+    info:
+      path: iOS/Info.plist
+      properties:
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchStoryboardName: LaunchScreen
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: false
+        CODE_SIGN_ENTITLEMENTS: iOS/iOS.entitlements
+    dependencies:
+      - package: stellarsdk
+        product: stellarsdk
+      - package: swift-composable-architecture
+        product: ComposableArchitecture
