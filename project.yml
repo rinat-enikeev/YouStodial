@@ -15,6 +15,11 @@ packages:
   stellarsdk:
     url: https://github.com/Soneso/stellar-ios-mac-sdk
     from: 2.6.6
+  KeychainAccess: 
+    url: https://github.com/kishikawakatsumi/KeychainAccess
+    from: 4.2.2
+  WalletsUI:
+    path: ./Targets/WalletsUI
 
 name: *APP_NAME
 
@@ -49,3 +54,5 @@ targets:
         product: stellarsdk
       - package: swift-composable-architecture
         product: ComposableArchitecture
+      - package: WalletsUI
+      - package: KeychainAccess
