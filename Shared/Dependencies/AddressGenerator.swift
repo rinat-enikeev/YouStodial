@@ -11,7 +11,7 @@ extension AddressGenerator: @retroactive DependencyKey {
         generate: { source in
             switch source {
             case let .seed(seed):
-                let keyPair = try stellarsdk.Wallet.createKeyPair(mnemonic: seed, passphrase: nil, index: 0)
+                let keyPair = try WalletUtils.createKeyPair(mnemonic: seed, passphrase: nil, index: 0)
                 keychain[keyPair.accountId] = keyPair.secretSeed
                 return keyPair.accountId
             case let .privateKey(privateKey):

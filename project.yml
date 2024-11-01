@@ -11,10 +11,10 @@ settings:
 packages:
   swift-composable-architecture: 
     url: https://github.com/pointfreeco/swift-composable-architecture
-    from: 1.15.0
+    from: 1.15.2
   stellarsdk:
     url: https://github.com/Soneso/stellar-ios-mac-sdk
-    from: 2.6.6
+    from: 3.0.0
   KeychainAccess: 
     url: https://github.com/kishikawakatsumi/KeychainAccess
     from: 4.2.2
