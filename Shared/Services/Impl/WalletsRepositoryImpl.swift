@@ -1,9 +1,7 @@
-import Dependencies
-import Domain
+import ComposableArchitecture
 import Foundation
-import Repository
 
-extension WalletsRepository: @retroactive DependencyKey {
+extension WalletsRepository: DependencyKey {
 
     public static let liveValue = Self(
         fetchAll: {

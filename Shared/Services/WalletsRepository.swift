@@ -1,5 +1,4 @@
-import Dependencies
-import Domain
+import ComposableArchitecture
 
 public struct WalletsRepository: Sendable {
     public var fetchAll: @Sendable () async throws -> [Wallet]

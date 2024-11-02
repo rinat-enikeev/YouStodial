@@ -1,10 +1,9 @@
-import Dependencies
+import ComposableArchitecture
 import Foundation
 import KeychainAccess
-import Repository
 import stellarsdk
 
-extension AddressGenerator: @retroactive DependencyKey {
+extension AddressGenerator: DependencyKey {
     private static let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
 
     public static let liveValue = Self(

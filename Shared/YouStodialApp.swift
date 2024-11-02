@@ -1,6 +1,5 @@
 import ComposableArchitecture
 import SwiftUI
-import WalletsUI
 
 @main
 struct YouStodialApp: App {
